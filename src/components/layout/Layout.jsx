@@ -1,8 +1,12 @@
-import React from 'react'
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Notfound from "./Notfound";
 
-function Layout() {
+function Layout({children}) {
   return (
-    <div>Layout</div>
+     <main>
+          {children}
+     </main>
   )
 }
 
