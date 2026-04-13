@@ -19,7 +19,7 @@ const StatCard = ({ label, value }) => (
 );
 
 const SchoolStatsSection = () => {
-  const gerbImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/960px-Emblem_of_Uzbekistan.svg.png";
+  const gerbImageUrl = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Presidential_Seal_of_Uzbekistan.svg";
 
   return (
     <section className="relative rounded-sm w-full bg-[#063a9b] overflow-hidden">
@@ -27,7 +27,7 @@ const SchoolStatsSection = () => {
         <img 
           src={gerbImageUrl} 
           alt="O'zbekiston Gerbi" 
-          className="h-[40%] md:h-[110%] w-auto max-w-none opacity-[0.10] translate-x-1/3 -rotate-12 select-none"
+          className="h-[40%] md:h-[110%] w-auto max-w-none opacity-[0.10] translate-x-1/7 -rotate-12 select-none"
         />
       </div>
 
