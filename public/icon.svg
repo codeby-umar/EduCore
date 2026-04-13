@@ -1,0 +1,49 @@
+<svg width="340" height="230" viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Main shape (cleaner geometry) -->
+  <path d="M50 155L205 45L290 75L135 185Z"
+        fill="url(#grad)"
+        filter="url(#shadow)"/>
+
+  <!-- Subtle inner highlight -->
+  <path d="M70 145L200 60L260 80L130 170Z"
+        fill="white"
+        opacity="0.08"/>
+
+  <!-- Accent line -->
+  <path d="M90 140L210 65"
+        stroke="white"
+        stroke-width="4"
+        stroke-linecap="round"
+        opacity="0.85"/>
+
+  <!-- Number 5 (balanced placement) -->
+  <text x="135" y="150"
+        font-size="105"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="900"
+        fill="white"
+        letter-spacing="-2">5</text>
+
+  <!-- Text -->
+  <text x="170" y="210"
+        text-anchor="middle"
+        font-size="20"
+        font-family="Inter, Arial"
+        fill="#0F172A"
+        font-weight="600"
+        letter-spacing="1">MAKTAB</text>
+</svg>

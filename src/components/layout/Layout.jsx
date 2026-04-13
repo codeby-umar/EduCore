@@ -1,13 +1,14 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Notfound from "./Notfound";
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
-     <main>
-          {children}
-     </main>
-  )
+    <main>
+      <Navbar />
+      {children}
+      <Footer />
+    </main>
+  );
 }
 
-export default Layout
+export default Layout;
