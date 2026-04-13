@@ -1,8 +1,10 @@
-import React from 'react'
+import Banners from "../components/ui/Banners"
 
 function contact() {
   return (
-    <div>contact</div>
+    <div>
+      <Banners children={"Bog'lanish uchun sahifa"}/>
+    </div>
   )
 }
 

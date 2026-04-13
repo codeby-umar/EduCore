@@ -1,8 +1,10 @@
-import React from 'react'
+import Banners from "../components/ui/Banners"
 
 function News() {
   return (
-    <div>News</div>
+    <div>
+              <Banners children={"Yangiliklar sahifasi"}/>
+    </div>
   )
 }
 

@@ -1,8 +1,10 @@
-import React from 'react'
+import Banners from "../components/ui/Banners"
 
 function About() {
   return (
-    <div>About</div>
+    <div>
+       <Banners children={"Biz haqimizda sahifasi"}/>
+    </div>
   )
 }
 
