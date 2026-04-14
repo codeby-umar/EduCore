@@ -140,7 +140,6 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Map Section - Full width jiddiy effekt bilan */}
           <div className="mt-16 relative group">
              <div className="absolute inset-0 border border-slate-200 pointer-events-none z-10"></div>
              <motion.div 
@@ -150,7 +149,7 @@ const ContactPage = () => {
                className="w-full h-[450px] bg-slate-100 overflow-hidden"
              >
                <iframe 
-                 src="https://www.google.com/maps/embed?..." 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d771793.3756642591!2d70.88928222656254!3d40.91973905106221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca5002c169bcf%3A0xc514a38111008139!2s5-Maktab!5e0!3m2!1sen!2s!4v1776175381261!5m2!1sen!2s" 
                  width="100%" 
                  height="100%" 
                  style={{ border: 0, filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }} 

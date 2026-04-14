@@ -195,8 +195,8 @@ function Navbar() {
               {/* Yuqori qism - Header */}
               <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-[#fcfcfc]">
                 <div className="flex flex-col">
-                  <h2 className="text-sm font-black text-blue-900 uppercase tracking-widest">Navigatsiya</h2>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Rasmiy portal</p>
+                  <h2 className="text-sm font-black text-blue-900 uppercase tracking-widest">5 - maktab</h2>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Rasmiy website</p>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
