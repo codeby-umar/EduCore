@@ -55,7 +55,7 @@ const GalleryCarousel = () => {
       <Banners children={'Gallery sahifasi'} />
       <div className="container  px-4 py-8">
         <div
-          className="relative group w-full aspect-4/5 sm:aspect-video md:aspect-21/9] rounded-[2.5rem] overflow-hidden shadow-2xl bg-neutral-900"
+          className="relative group w-full aspect-4/5 sm:aspect-video md:aspect-21/9] rounded-2xl overflow-hidden shadow-2xl bg-neutral-900"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >

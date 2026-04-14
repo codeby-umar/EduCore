@@ -1,11 +1,12 @@
 import Logo from "../../../public/icon.svg";
-import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaFacebookF, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { SiTelegram } from "react-icons/si";
 import { BiLogIn } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
+import { NavLink, Link } from 'react-router-dom';
+import { X, ChevronRight, Globe, Phone } from 'lucide-react';
 
 
 function Navbar() {
@@ -178,54 +179,91 @@ function Navbar() {
           </div>
           <div
             onClick={() => setIsOpen(false)}
-            className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 transition-all duration-500 ${
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           />
 
+          {/* Menu Drawer */}
           <div
-            className={`fixed top-0 left-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ${
+            className={`fixed top-0 left-0 h-full w-[85%] sm:w-[400px] bg-white z-50 shadow-2xl transform transition-transform duration-500 ease-in-out border-r border-slate-100 ${
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
-            <div className="p-5 flex flex-col h-full">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-[#0B3C8A]">Menu</h2>
+            <div className="flex flex-col h-full bg-white">
+              
+              {/* Yuqori qism - Header */}
+              <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-[#fcfcfc]">
+                <div className="flex flex-col">
+                  <h2 className="text-sm font-black text-blue-900 uppercase tracking-widest">Navigatsiya</h2>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Rasmiy portal</p>
+                </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold"
+                  className="w-10 h-10 flex items-center justify-center rounded-sm bg-slate-50 text-slate-900 hover:bg-blue-900 hover:text-white transition-all duration-300"
                 >
-                  ✕
+                  <X size={20} />
                 </button>
               </div>
-              <div className="flex flex-col gap-2">
-                {[
-                  { to: "/", label: "Bosh sahifa" },
-                  { to: "/about", label: "Biz haqimizda" },
-                  { to: "/news", label: "Yangiliklar" },
-                  { to: "/gallery", label: "Galereya" },
-                  { to: "/contact", label: "Bog‘lanish" },
-                ].map((item, i) => (
-                  <NavLink
-                    key={i}
-                    to={item.to}
-                    onClick={() => setIsOpen(false)}
-                    className={'px-4 py-3 rounded-lg font-medium transition-all duration-200'}
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
+
+              {/* Menyu elementlari */}
+              <div className="flex-grow py-6 px-4 overflow-y-auto">
+                <nav className="flex flex-col gap-1">
+                  {[
+                    { to: "/", label: "Bosh sahifa" },
+                    { to: "/about", label: "Biz haqimizda" },
+                    { to: "/news", label: "Yangiliklar" },
+                    { to: "/gallery", label: "Galereya" },
+                    { to: "/contact", label: "Bog‘lanish" },
+                  ].map((item, i) => (
+                    <NavLink
+                      key={i}
+                      to={item.to}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) => `
+                        group flex items-center justify-between px-5 py-4 rounded-sm font-bold text-sm uppercase tracking-wider transition-all duration-300
+                        ${isActive 
+                          ? "bg-blue-50 text-blue-900 border-l-4 border-blue-900" 
+                          : "text-slate-600 hover:bg-slate-50 hover:text-blue-900"
+                        }
+                      `}
+                    >
+                      {item.label}
+                      <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                    </NavLink>
+                  ))}
+                </nav>
+
+                {/* Yordamchi ma'lumotlar (Senat saytlari kabi) */}
+                <div className="mt-10 pt-10 border-t border-slate-100 px-5">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4 text-slate-500">
+                      <Phone size={16} className="text-blue-800" />
+                      <span className="text-xs font-bold">+998 (--) --- -- --</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-slate-500">
+                      <Globe size={16} className="text-blue-800" />
+                      <span className="text-xs font-bold text-blue-800 underline underline-offset-4 cursor-pointer">O'zbekcha (UZ)</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="mt-auto">
+
+              {/* Pastki qism - Tizimga kirish */}
+              <div className="p-6 bg-[#fcfcfc] border-t border-slate-100">
                 <Link
                   to="/login"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full mt-6 bg-[#0B3C8A] text-white py-3 rounded-lg font-semibold hover:bg-[#092f6c] transition"
+                  className="flex items-center justify-center gap-3 w-full bg-blue-900 text-white py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-lg shadow-blue-900/20 active:scale-95"
                 >
                   Tizimga kirish
-                  <BiLogIn size={20} />
+                  <BiLogIn size={18} />
                 </Link>
+                <p className="text-center text-[9px] text-slate-400 font-bold uppercase mt-6 tracking-[0.1em]">
+                  5-maktab portal © 2026
+                </p>
               </div>
+
             </div>
           </div>
         </nav>
